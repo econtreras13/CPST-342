@@ -20,15 +20,46 @@
         -ms-user-select: none;
         user-select: none;
       }
+
+      body{
+            background-blend-mode: color-burn;
+            background: lightcyan;
+      }
       footer{
           width:100%;
-          background: blue;
+          background:skyblue;
       }
 
       .footer-content{
           color: white;
 
       }
+
+      .wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px; 
+    border: 1px solid black;
+    margin-bottom: 10%;
+    
+}
+
+    #slide {
+        position: absolute;
+        left: -200px;
+        width: 200px;
+        height: 200px;
+        background: blue;
+        transition: 1s;
+        
+        display: block;
+        margin: 0 auto;
+    }
+    .wrapper:hover #slide {
+        transition: 1s;
+        left: 0;
+    }
       .mynavbar{
           overflow: hidden;
       }
