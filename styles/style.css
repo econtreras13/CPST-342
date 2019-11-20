@@ -1,0 +1,9 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin-bottom: 10%;
+}
+/*# sourceMappingURL=style.css.map */
