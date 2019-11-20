@@ -12,6 +12,9 @@
 
     <!-- Bootstrap core CSS -->
     <style>
+        body,html{
+            height: 100px;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -21,6 +24,19 @@
         user-select: none;
       }
 
+      .hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("chocolate_hero.jpg;");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
       body{
             background-blend-mode: color-burn;
             background: lightcyan;
@@ -36,12 +52,12 @@
       }
 
       .wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 200px;
-    height: 200px; 
-    border: 1px solid black;
-    margin-bottom: 10%;
+        position: relative;
+        overflow: hidden;
+        width: 200px;
+        height: 200px; 
+        border: 1px solid black;
+        margin-bottom: 10%;
     
 }
 
@@ -87,7 +103,7 @@ button{
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse  mynavbar" id="navbarsExampleDefault">
+  <div class="background-image collapse navbar-collapse  mynavbar" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
