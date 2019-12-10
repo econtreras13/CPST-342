@@ -8,7 +8,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-
+      <script src="/assets/js/app.js"></script>
 
     <!-- Bootstrap core CSS -->
     <style>
@@ -23,7 +23,7 @@
 
       body{
             background-blend-mode: color-burn;
-            background: lightcyan;
+            background: white;
       }
       footer{
           width:100%;
@@ -53,6 +53,26 @@ input{
     margin-bottom: 10px;
 }
 
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 30vh;
+	padding: 1em;
+	color: white;
+	background: url("assets/hero_image.jpg") center center no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+
+	@media only screen and (min-width: 32em) { .hero-title { font-size: 16vh; } }	
+
+.hero-footer {
+	display: flex;
+	margin-bottom: 1em;
+}
+
     #slide {
         position: absolute;
         left: -200px;
@@ -80,10 +100,15 @@ input{
           font-size: 3.5rem;
         }
       }
+.alert-success, .alert-danger{
+  display: none;
+}
+      
     </style>
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
   </head>
+  <section class="hero">
+  
+  </section>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,14 +136,46 @@ input{
   
 <div class="starter-template">
     <h1>Want more chocolate? Subscribe now!</h1>
-        <form>
+        <form id="submitForm" action="https://formsubmit.co/evelinc1113@gmail.com" method="POST" >
                 <input class="form-control mr-sm-2" type="text" placeholder="Email" aria-label="Email">
                 <input class="form-control mr-sm-2" type="number" placeholder="(555)-555-5555" aria-label="Phone">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Subscribe</button>
-              </form>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="subscribeBtn">Subscribe</button>
+              </form></br>
+              <div></div>
+              <div class="alert alert-success" role="alert">
+                  Success!
+                 </div>
+                 <div class="alert alert-danger" role="alert">
+                   Failed!
+                 </div>
+            </main>
+            
 </body>
-</main><!-- /.container -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
-</html>
+<!-- /.container -->
+
+
+
+<script>
+
+const form = document.getElementById("submitForm");
+$("#submitForm").on("submit", (e) => {
+  e.preventDefault(); 
+    const method = form.getAttribute("method");
+    const action = form.getAttribute("action");
+    const submitForm = async (evt) => {
+        return await fetch(action, {
+            method, // shorthand for method: method
+            mode: 'cors', // make sure you are running through HTTP:// and not file://
+            body: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+        });
+
+}); 
+
+
+
+
+
+</script>
+
+      </html>

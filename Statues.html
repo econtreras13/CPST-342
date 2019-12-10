@@ -9,7 +9,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
 
-
     <!-- Bootstrap core CSS -->
     <style>
       .bd-placeholder-img {
@@ -21,9 +20,30 @@
         user-select: none;
       }
 
-      body{
+      .hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 30vh;
+	padding: 1em;
+	color: white;
+	background: url("assets/hero_image.jpg") center center no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+
+	@media only screen and (min-width: 32em) { .hero-title { font-size: 16vh; } }	
+
+.hero-footer {
+	display: flex;
+	margin-bottom: 1em;
+}
+
+
+body{
             background-blend-mode: color-burn;
-            background: lightcyan;
+            background: white;
       }
       footer{
           width:100%;
@@ -40,7 +60,7 @@
     overflow: hidden;
     width: 200px;
     height: 200px; 
-    border: 1px solid black;
+    border: 5px solid black;
     margin-bottom: 10%;
     
 }
@@ -72,36 +92,82 @@
           font-size: 3.5rem;
         }
       }
+
+      
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: plum;
+}
+
+
+
+
     </style>
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+  <section class="hero">
+  
+  </section>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse  mynavbar" id="navbarsExampleDefault">
+    
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-            <a class="nav-link" href="Statues.html">Statues</a>
-      </li>
-      <li class="nav-item">
-            <a class="nav-link" href="Experiments.html">Experiments</a>
-      </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="Experiments.html">Experiments <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="Statues.html">Statues <span class="sr-only">(current)</span></a>
+          </li>
     </ul>
+    
   </div>
 </nav>
 
-<main role="main" class="container">>
+<main role="main" class="container">
 <h1 style="text-align: center;">Statues</h1>
 <h2>See our great selection of statues!</h2>
 <h3>Here is a beautiful chocolate elephant!</h3>
 <div class="wrapper"><img id="slide"src="assets/chocolate-elephant.jpg" alt="Chocolate Elephant"/></div>
 
+<div>
+
+</div>
+<h4>We also have...</h4>
+<div class="wrapper"><img id="slide"src="assets/chocolategif.gif" alt="Chocolate Elephant"/></div>
+
+</main>
+
+
 </body>
+
+<script type="text/javascript">
+function myFunction() {
+  document.getElementById("menuOptions").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 </html>
